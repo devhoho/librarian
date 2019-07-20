@@ -1,0 +1,64 @@
+def javaProjects = [project(":common")]
+def bootProjects = [project(":web") , project(":rdb"), project(":redis")]
+
+buildscript {
+    ext {
+        springBootVersion = '2.0.1.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+subprojects {
+    group 'org.holab'
+    version '1.0-SNAPSHOT'
+
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    compileJava {
+        options.encoding="UTF-8"
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile ('org.projectlombok:lombok:1.18.2')
+        compile ('org.modelmapper:modelmapper:2.3.4')
+    }
+}
+
+configure(javaProjects) {
+    dependencies {
+        compile 'junit:junit'
+        compile 'org.slf4j:slf4j-api'
+        testCompile 'junit:junit'
+        testCompile 'org.hamcrest:hamcrest-library'
+        testCompile 'org.mockito:mockito-core'
+    }
+}
+
+configure(bootProjects) {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile ('org.springframework.boot:spring-boot-starter')
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+}
+

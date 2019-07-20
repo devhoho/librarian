@@ -1,0 +1,6 @@
+rootProject.name = 'librarian'
+
+include 'web'
+include 'rdb'
+include 'redis'
+include 'common'

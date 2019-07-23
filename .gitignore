@@ -142,4 +142,7 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
+### local config ###
+**/application-local.yml
+
 # End of https://www.gitignore.io/api/java,gradle,java-web,code-java,intellij+all

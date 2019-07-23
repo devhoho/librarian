@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: local
+
+rest:
+  factory:
+    read-timeout: 5000
+    connect-timeout: 3000

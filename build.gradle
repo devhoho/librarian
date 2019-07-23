@@ -1,5 +1,5 @@
 def javaProjects = [project(":common")]
-def bootProjects = [project(":web") , project(":rdb"), project(":redis")]
+def bootProjects = [project(":web") , project(":rdb"), project(":redis"), project(":api")]
 
 buildscript {
     ext {

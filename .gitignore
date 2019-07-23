@@ -143,6 +143,6 @@ gradle-app.setting
 **/build/
 
 ### local config ###
-**/application-local.yml
+#**/application-local.yml
 
 # End of https://www.gitignore.io/api/java,gradle,java-web,code-java,intellij+all

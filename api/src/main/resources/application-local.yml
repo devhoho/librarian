@@ -1,0 +1,9 @@
+api:
+  book:
+    kakao:
+      uri: "https://dapi.kakao.com/v3/search/book"
+      key: "KakaoAK 200271fc7f88c78672a52bd1037eb495"
+    naver:
+      uri:
+      client-id: "78r4URKsbvnpJWDVrUiq"
+      client-key: "X3eqwE8Hdq"
